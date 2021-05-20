@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<input type="button" value="OK" id="btnOk"/>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#btnOk').click(function () {
+
+            alert('sssss');
+                var serviceURL = '/AjaxTest/FirstAjax';
+
+                $.ajax({
+                    type: "POST",
+                    url: serviceURL,
+                    data: param = "",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: successFunc,
+                    error: errorFunc
+                });
+
+                function ss(data, status) {
+                    alert(data);
+                }
+
+                function errorFunc() {
+                    alert('error');
+                }
+            })
+
+        });
+</script>
